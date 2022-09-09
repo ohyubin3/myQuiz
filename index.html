@@ -5,26 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Paul's Quiz</title>
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
+    <header>
+        <!-- timer bar -->
+        <div class="timerBar">
+            <h3></h3>
+        </div>
+    </header>
+
     <!-- Welcome Screen -->
     <div class="container">
         <h1>Welcome to Paul's random quiz</h1>
         <p>
             Try to answer this quiz I made to practice building a quiz using Javascript.
             <br>
+            
+            <br>
             If you select a wrong answer, your time will decrease by ten second.
         </p>
-        
+
+        <button class="startQuizBtn">
+            Start the Quiz
+        </button>
     </div>
 
-    <!-- timer bar -->
-    <div id="timerBar">
-        <h3></h3>
-    </div>
     
     
     <div>

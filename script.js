@@ -19,8 +19,7 @@ let smallTimer = 10;
 
 
 
-renderQuestion();
-
+// renderQuestion();
 startTimer();
 
 
