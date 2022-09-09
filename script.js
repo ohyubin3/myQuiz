@@ -1,13 +1,13 @@
 let questions = [
-    {question: "Please select choice 'b' for this question.", choices: ["a. This is not the answer", "b. This is the answers", "c. This is not the answer", "d. This is not the answer" ]},
+    {question: "1", choices: "This is where the choices will go"},
     {question: "2", choices: "This is where the choices will go"},
     {question: "3", choices: "This is where the choices will go"},
     {question: "4", choices: "This is where the choices will go"},
 ]
 
 // Regarding QUestions
-let questionEl = document.querySelector("h1")
-let choiceEl = document.querySelector("h2")
+let questionEl = document.querySelector("h1q")
+let choiceEl = document.querySelector("h2q")
 let container = document.querySelector(".container")
 let currentQuestionIndex = 0;
 
@@ -56,3 +56,6 @@ function startTimer() {
 
     
 }
+
+
+
