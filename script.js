@@ -17,10 +17,10 @@ let container = document.querySelector(".container")
 let currentQuestionIndex = 0;
 
 // Regarding Timer
-let timerEl = document.querySelector("h3")
+let timerEl = document.querySelector("#time-remaining")
 let intervalId;
 let timer = 60;
-let smallTimer = 10;
+
 
 
 
@@ -35,11 +35,11 @@ startQuizBtn.addEventListener("click", gameStarts);
 
 function gameStarts() {
     startTimer();
-    renderQuestion();
-    currentQuestionIndex++;
-
-} 
     
+} 
+
+renderQuestion();
+currentQuestionIndex++;
 
 
 

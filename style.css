@@ -6,7 +6,7 @@ body {
 
 .timerBar {
     display:   block;
-    text-align: left;
+    text-align: center;
     width: 90vw;
     background-color: aqua;
     margin: 20px auto;
