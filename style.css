@@ -5,7 +5,7 @@ body {
 }
 
 .timerBar {
-    display:   none;
+    visibility: hidden;
     text-align: center;
     width: 90vw;
     background-color: aqua;
@@ -23,7 +23,7 @@ body {
     width: 90vw;
     background-color: #f0ead6;
     padding-top: 10px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
 }
 
 .startQuizBtn {

@@ -10,7 +10,7 @@ let questions = [
     {question: "4", choices: "This is where the choices will go"},
 ]
 
-// Regarding QUestions
+// Regarding Questions
 let questionEl = document.querySelector("h1q")
 let choiceEl = document.querySelector("h2q")
 let container = document.querySelector(".container")
@@ -18,9 +18,9 @@ let currentQuestionIndex = 0;
 
 // Regarding Timer
 let timerEl = document.querySelector("#time-remaining")
+let timerSlot = document.querySelector("#timer")
 let intervalId;
-let timer = 60;
-
+let timer = 75;
 
 
 
@@ -34,8 +34,8 @@ startQuizBtn.addEventListener("click", gameStarts);
 
 
 function gameStarts() {
-    startTimer();
     showTimeBar();
+    startTimer();
 
 } 
 
@@ -44,10 +44,10 @@ function gameStarts() {
 
 
 function showTimeBar() {
-    if (timeBarEl.style.display === "none") {
-        timeBarEl.style.display = "block";
+    if (timeBarEl.style.visibility === "hidden") {
+        timeBarEl.style.visibility = "visible";
       } else {
-        timeBarEl.style.display = "none";
+        timeBarEl.style.visibility = "hidden";
       }
 }
 
@@ -66,7 +66,9 @@ function startTimer() {
         timerEl.textContent = timer;
 
         if(timer === 0){
-            clearInterval(intervalId)
+        timeBarEl.style.visibility = "hidden";
+        clearInterval(intervalId)
+        
         }
 
 
