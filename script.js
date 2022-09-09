@@ -10,10 +10,12 @@ let questions = [
 ]
 
 // Regarding Questions
-let questionEl = document.querySelector("h1q")
-let choiceEl = document.querySelector("h2q")
+let questionEl = document.getElementById("questionSlot")
+let choiceEl = document.getElementById("answerChoiceSlot")
 let container = document.querySelector(".container")
 let currentQuestionIndex = 0;
+
+
 
 // Regarding Timer
 let timerEl = document.querySelector("#time-remaining")
@@ -22,43 +24,13 @@ let intervalId;
 let timer = 75;
 
 
-
-
-
-
-startQuizBtn.addEventListener("click", gameStarts);
-
-
-
-
-
-function gameStarts() {
-    var startScreenEl = document.getElementById('start-quiz');
-    startScreenEl.setAttribute('class', 'hide');
-    showTimeBar();
-    startTimer();
-}
-
-// renderQuestion();
-// currentQuestionIndex++;
-
-
-
 function showTimeBar() {
     if (timeBarEl.style.visibility === "hidden") {
         timeBarEl.style.visibility = "visible";
-      } else {
+    } else {
         timeBarEl.style.visibility = "hidden";
-      }
+    }
 }
-
-function renderQuestion() {
-    questionEl.textContent = questions[currentQuestionIndex].question;
-    choiceEl.textContent = questions[currentQuestionIndex].choices;
-
-}
-
-
 
 
 function startTimer() {
@@ -71,12 +43,51 @@ function startTimer() {
         clearInterval(intervalId)
         
         }
-
-
     },1000);
-
-    
 }
+
+
+
+
+
+currentQuestionIndex++;
+
+// Quiz Start Button //
+startQuizBtn.addEventListener("click", gameStarts);
+
+function gameStarts() {
+    startScreenEl.setAttribute('class', 'hide');
+    showTimeBar();
+    startTimer();
+    showQuizCon.setAttribute('class', 'show');
+    renderQuestion();
+
+
+}
+
+
+
+
+var startScreenEl = document.getElementById('start-quiz');
+var showQuizCon = document.getElementById('quizContainer');
+
+// function showQuestion() {
+//     if (showQuizCon.style.visibility === "hidden") {
+//         showQuizCon.style.visibility = "visible";
+//     } else {
+//         showQuizCon.style.visibility = "hidden";
+//     }
+// }
+
+
+function renderQuestion() {
+    questionEl.textContent = questions[currentQuestionIndex].question;
+    choiceEl.textContent = questions[currentQuestionIndex].choices;
+
+}
+
+
+
 
 
 

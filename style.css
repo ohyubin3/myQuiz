@@ -30,8 +30,18 @@ body {
     text-align: center;
     width: 200px;
     height: 50px;
-  }
+}
 
-  .hide {
+.quizContainer {
     visibility: hidden;
+    display: block;
+}
+
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+    visibility: visible;
   }
