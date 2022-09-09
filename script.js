@@ -1,5 +1,5 @@
 let startQuizBtn = document.querySelector(".startQuizBtn")
-
+let timeBarEl = document.querySelector(".timerBar")
 
 
 
@@ -35,14 +35,21 @@ startQuizBtn.addEventListener("click", gameStarts);
 
 function gameStarts() {
     startTimer();
-    
+    showTimeBar();
+
 } 
 
-renderQuestion();
-currentQuestionIndex++;
+// renderQuestion();
+// currentQuestionIndex++;
 
 
-
+function showTimeBar() {
+    if (timeBarEl.style.display === "none") {
+        timeBarEl.style.display = "block";
+      } else {
+        timeBarEl.style.display = "none";
+      }
+}
 
 function renderQuestion() {
     questionEl.textContent = questions[currentQuestionIndex].question;

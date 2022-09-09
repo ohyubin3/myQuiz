@@ -5,7 +5,7 @@ body {
 }
 
 .timerBar {
-    display:   block;
+    display:   none;
     text-align: center;
     width: 90vw;
     background-color: aqua;

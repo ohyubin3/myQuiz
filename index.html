@@ -13,7 +13,7 @@
     <header>
         <!-- timer bar -->
         <div class="timerBar">
-            <h2 id="timer">Time: <span id="time-remaining">0</span></h2>
+            <h2 id="timer">You have <span id="time-remaining">60</span> seconds remaining.</h2>
         </div>
     </header>
 
@@ -28,7 +28,7 @@
             If you select a wrong answer, your time will decrease by ten second.
         </p>
 
-        <button class="startQuizBtn">
+        <button class="startQuizBtn" onclick="showTimeBar()">
             Start the Quiz
         </button>
     </div>
