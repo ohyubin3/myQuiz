@@ -28,6 +28,9 @@ let timerSlot = document.querySelector("#timer")
 let intervalId;
 let timer = 75;
 
+var startScreenEl = document.getElementById('start-quiz');
+var showQuizCon = document.querySelector('.quizContainer');
+
 
 function showTimeBar() {
     if (timeBarEl.style.visibility === "hidden") {
@@ -53,7 +56,6 @@ function startTimer() {
 
 
 
-currentQuestionIndex++;
 
 
 
@@ -64,7 +66,7 @@ function gameStarts() {
     startScreenEl.setAttribute('class', 'hide');
     showTimeBar();
     startTimer();
-    // showQuizCon.setAttribute('class', 'show');
+    showQuizCon.classList.add('show');
     renderQuestion();
     
     
@@ -73,28 +75,25 @@ function gameStarts() {
 
 
 
-var startScreenEl = document.getElementById('start-quiz');
-var showQuizCon = document.getElementById('quizContainer');
+
 
 function showQuestion() {
-        if (showQuizCon.style.visibility === "hidden") {
-            showQuizCon.style.visibility = "visible";
-        } else {
-            showQuizCon.style.visibility = "hidden";
-        }
+    if (showQuizCon.style.visibility === "hidden") {
+        showQuizCon.style.visibility = "visible";
+    } else {
+        showQuizCon.style.visibility = "hidden";
     }
-    
-    
-    // Game Features//
-    
-    
-    choiceContainer.addEventListener("click", function(event){
-        if (event.target.matches("button")){
-            console.log(questions[currentQuestionIndex])
-            console.log(event.target)
+}
+
+
+// Game Features//
+
+
+choiceContainer.addEventListener("click", function(event){
+    if (event.target.matches("button")){
+        currentQuestionIndex++;
+        renderQuestion();
         }
-    
-    
     })
     
 
