@@ -2,7 +2,6 @@ let startQuizBtn = document.querySelector(".startQuizBtn")
 let timeBarEl = document.querySelector(".timerBar")
 
 
-
 let questions = [
     {question: "1", choices: "This is where the choices will go"},
     {question: "2", choices: "This is where the choices will go"},
@@ -34,13 +33,15 @@ startQuizBtn.addEventListener("click", gameStarts);
 
 
 function gameStarts() {
+    var startScreenEl = document.getElementById('start-quiz');
+    startScreenEl.setAttribute('class', 'hide');
     showTimeBar();
     startTimer();
-
-} 
+}
 
 // renderQuestion();
 // currentQuestionIndex++;
+
 
 
 function showTimeBar() {
