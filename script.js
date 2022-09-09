@@ -63,10 +63,10 @@ function startTimer() {
 startQuizBtn.addEventListener("click", gameStarts);
 
 function gameStarts() {
-    startScreenEl.setAttribute('class', 'hide');
+    startScreenEl.setAttribute('class', 'hide2');
     showTimeBar();
     startTimer();
-    showQuizCon.classList.add('show');
+    showQuizCon.classList.add('show2');
     renderQuestion();
     
     
@@ -74,16 +74,6 @@ function gameStarts() {
 
 
 
-
-
-
-function showQuestion() {
-    if (showQuizCon.style.visibility === "hidden") {
-        showQuizCon.style.visibility = "visible";
-    } else {
-        showQuizCon.style.visibility = "hidden";
-    }
-}
 
 
 // Game Features//
@@ -103,8 +93,6 @@ choiceContainer.addEventListener("click", function(event){
         choiceB.textContent = questions[currentQuestionIndex].choices[1];
         choiceC.textContent = questions[currentQuestionIndex].choices[2];
         choiceD.textContent = questions[currentQuestionIndex].choices[3];
-
-
 }
 
 
