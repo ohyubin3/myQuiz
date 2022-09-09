@@ -3,18 +3,22 @@ let timeBarEl = document.querySelector(".timerBar")
 
 
 let questions = [
-    {question: "1", choices: "This is where the choices will go"},
-    {question: "2", choices: "This is where the choices will go"},
-    {question: "3", choices: "This is where the choices will go"},
-    {question: "4", choices: "This is where the choices will go"},
+    {question: "1", choices: ["1","2","3","4",], answer:"1"},
+    {question: "2", choices: ["1","2","3","4",], answer:"2"},
+    {question: "3", choices: ["1","2","3","4",], answer:"3"},
+    {question: "4", choices: ["1","2","3","4",], answer:"4"},
 ]
 
 // Regarding Questions
 let questionEl = document.getElementById("questionSlot")
-let choiceEl = document.getElementById("answerChoiceSlot")
+let choiceContainer = document.getElementById("answerChoiceSlot")
 let container = document.querySelector(".container")
 let currentQuestionIndex = 0;
-
+// choice hookinh
+let choiceA = document.getElementById("A")
+let choiceB = document.getElementById("B")
+let choiceC = document.getElementById("C")
+let choiceD = document.getElementById("D")
 
 
 // Regarding Timer
@@ -46,11 +50,20 @@ function startTimer() {
     },1000);
 }
 
+choiceContainer.addEventListener("click", function(event){
+    if (event.target.matches("button")){
+        console.log(questions[currentQuestionIndex])
+        console.log(event.target)
+    }
 
+
+})
 
 
 
 currentQuestionIndex++;
+
+
 
 // Quiz Start Button //
 startQuizBtn.addEventListener("click", gameStarts);
@@ -61,8 +74,8 @@ function gameStarts() {
     startTimer();
     showQuizCon.setAttribute('class', 'show');
     renderQuestion();
-
-
+    
+    
 }
 
 
@@ -72,17 +85,21 @@ var startScreenEl = document.getElementById('start-quiz');
 var showQuizCon = document.getElementById('quizContainer');
 
 // function showQuestion() {
-//     if (showQuizCon.style.visibility === "hidden") {
-//         showQuizCon.style.visibility = "visible";
-//     } else {
-//         showQuizCon.style.visibility = "hidden";
-//     }
+    //     if (showQuizCon.style.visibility === "hidden") {
+        //         showQuizCon.style.visibility = "visible";
+        //     } else {
+            //         showQuizCon.style.visibility = "hidden";
+            //     }
 // }
 
 
 function renderQuestion() {
     questionEl.textContent = questions[currentQuestionIndex].question;
-    choiceEl.textContent = questions[currentQuestionIndex].choices;
+    choiceA.textContent = questions[currentQuestionIndex].choices[0];
+    choiceB.textContent = questions[currentQuestionIndex].choices[1];
+    choiceC.textContent = questions[currentQuestionIndex].choices[2];
+    choiceD.textContent = questions[currentQuestionIndex].choices[3];
+
 
 }
 
