@@ -1,3 +1,8 @@
+let startQuizBtn = document.querySelector(".startQuizBtn")
+
+
+
+
 let questions = [
     {question: "1", choices: "This is where the choices will go"},
     {question: "2", choices: "This is where the choices will go"},
@@ -19,18 +24,25 @@ let smallTimer = 10;
 
 
 
-// renderQuestion();
-startTimer();
+
+
+
+startQuizBtn.addEventListener("click", gameStarts);
 
 
 
 
-container.addEventListener("click", function() {
-    currentQuestionIndex++;
+
+function gameStarts() {
+    startTimer();
     renderQuestion();
+    currentQuestionIndex++;
+
+} 
     
-    
-})
+
+
+
 
 function renderQuestion() {
     questionEl.textContent = questions[currentQuestionIndex].question;
