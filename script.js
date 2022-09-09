@@ -1,5 +1,5 @@
 let questions = [
-    {question: "1", choices: "This is where the choices will go"},
+    {question: "Please select choice 'b' for this question.", choices: ["a. This is not the answer", "b. This is the answers", "c. This is not the answer", "d. This is not the answer" ]},
     {question: "2", choices: "This is where the choices will go"},
     {question: "3", choices: "This is where the choices will go"},
     {question: "4", choices: "This is where the choices will go"},
