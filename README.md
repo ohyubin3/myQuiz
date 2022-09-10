@@ -45,6 +45,6 @@ If you miss a question, 10 seconds will be deducted from the timer.
 
 Your Name - Paul Oh, baul3oh@gmail.com
 
-Project Link: https://github.com/ohyubin3/rndPswdGen
+Project Link: https://github.com/ohyubin3/myQuiz
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
