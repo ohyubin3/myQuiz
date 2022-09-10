@@ -4,13 +4,21 @@ let timeBarEl = document.querySelector(".timerBar");
 // let correctAnswer = questions.
 let questions = [
   {
-    question: "1",
-    choices: ["test1", "test2", "test3", "test4"],
-    answer: "test1",
+    question: "Please select choice A.",
+    choices: ["A", "V", "C", "T"],
+    answer: "A",
   },
-  { question: "2", choices: ["2", "3", "4", "5"], answer: "3" },
-  { question: "3", choices: ["3", "4", "5", "6"], answer: "5" },
-  { question: "4", choices: ["4", "5", "6", "7"], answer: "7" },
+  { question: "What is 1+1?", choices: ["4", "4", "5", "2"], answer: "2" },
+  {
+    question: "What is the extension for Javascript?",
+    choices: [".zip", ".js", ".lol", ".nah"],
+    answer: ".js",
+  },
+  {
+    question: "Please select a number.",
+    choices: ["A", "Z", "5", "E"],
+    answer: "5",
+  },
 ];
 
 // Regarding Questions
@@ -139,12 +147,14 @@ saveBtn.addEventListener("click", function (event) {
     }
     allScores.push(finalScore);
     var newScore = JSON.stringify(allScores);
+
     // console.log(newScore);
     localStorage.setItem("allScores", newScore);
     for (let i = 0; i < allScores.length; i++) {
       var createLi = document.createElement("li");
       localStorage.getItem("allScores", newScore);
       createLi.innerHTML = allScores[i].initials + " " + allScores[i].score;
+      allScores.splice(createLi, 1);
       showScore.appendChild(createLi);
     }
   }
