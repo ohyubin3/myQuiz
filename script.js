@@ -154,7 +154,6 @@ saveBtn.addEventListener("click", function (event) {
       var createLi = document.createElement("li");
       localStorage.getItem("allScores", newScore);
       createLi.innerHTML = allScores[i].initials + " " + allScores[i].score;
-      allScores.splice(createLi, 1);
       showScore.appendChild(createLi);
     }
   }
