@@ -24,12 +24,21 @@ let choiceC = document.getElementById("C");
 let choiceD = document.getElementById("D");
 
 
+
+//Regarding Score
+let scoreEl = document.querySelector("#total-score");
+let scoreId
+let score = 0;
+scoreEl.textContent = score;
+
+
+
+
+
 // Regarding Timer
 let timerEl = document.querySelector("#time-remaining")
-let timerSlot = document.querySelector("#timer")
 let intervalId;
-let timer = 30;
-let score = 0;
+let timer = 40;
 
 var startScreenEl = document.getElementById('start-quiz');
 var showQuizCon = document.querySelector('.quizContainer');
@@ -57,8 +66,10 @@ function startTimer() {
     },1000);
 }
 
-function gameEnds() {
-    document.querySelector(".game-over-container").style.display="block"
+
+
+function deductTime(){
+    timer -= 10;
 }
 
 
@@ -87,11 +98,15 @@ choiceContainer.addEventListener("click", function(event){
     }
 })
 
+
+
+
 function verifyAnswer(event) {
     if (questions[currentQuestionIndex].answer === event.target.textContent) {
-        score++;
         currentQuestionIndex++;
         renderQuestion();
+        score++;
+        console.log(score)
     }
     else {    
         console.log(event.target.textContent)
@@ -100,14 +115,6 @@ function verifyAnswer(event) {
         renderQuestion();
     }
 }
-
-    
-function deductTime(){
-    timer -= 10;
-}
-
-
-
 
 
 
@@ -119,6 +126,14 @@ function renderQuestion() {
     choiceD.textContent = questions[currentQuestionIndex].choices[3];
 }
 
+
+function gameEnds() {
+    
+    document.querySelector(".game-over-container").style.display="block"
+
+
+
+}
 
 
 

@@ -13,7 +13,8 @@
     <header>
         <!-- timer bar -->
         <div class="timerBar">
-            <h2 id="timer">You have <span id="time-remaining">75</span> seconds remaining.</h2>
+            <h2 id="timer">You have <span id="time-remaining"></span> seconds remaining.</h2>
+            <h2 id="score">Your have <span id="total-score"></span> points.</h2>
         </div>
     </header>
 
@@ -43,7 +44,12 @@
                 <section class="gradingA">Right or Wrong</section>
             </div>
         <section class="game-over-container" hidden>
-            
+            <h1 id="game-over">You are finished</h1>
+            <p id="score-text">You score : <span id="score">0</span></p>
+            <form id="submit-score">
+              <label for="initials">Enter initials:</label>
+              <input type="text" id="initials">
+              <button type="submit">Submit</button>
             <!-- Initial box  -->
         </section>
     </div>
