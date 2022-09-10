@@ -114,6 +114,7 @@ function verifyAnswer(event) {
         currentQuestionIndex++;
         renderQuestion();
     }
+
 }
 
 
@@ -124,11 +125,14 @@ function renderQuestion() {
     choiceB.textContent = questions[currentQuestionIndex].choices[1];
     choiceC.textContent = questions[currentQuestionIndex].choices[2];
     choiceD.textContent = questions[currentQuestionIndex].choices[3];
+    if (currentQuestionIndex >= questions.length) {
+        gameEnds();
+    }
 }
 
 
 function gameEnds() {
-    
+
     document.querySelector(".game-over-container").style.display="block"
 
 
