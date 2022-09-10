@@ -25,7 +25,8 @@
 
 
 This is a quiz build using Javascript. Your remaining second when you finish your quiz is your score.
-If you mis a question, 10 seconds will be deducted from the timer.
+<br>
+If you miss a question, 10 seconds will be deducted from the timer.
 
 
 
