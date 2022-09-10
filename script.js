@@ -28,7 +28,8 @@ let choiceD = document.getElementById("D");
 let timerEl = document.querySelector("#time-remaining")
 let timerSlot = document.querySelector("#timer")
 let intervalId;
-let timer = 75;
+let timer = 30;
+let score = 0;
 
 var startScreenEl = document.getElementById('start-quiz');
 var showQuizCon = document.querySelector('.quizContainer');
@@ -57,7 +58,7 @@ function startTimer() {
 }
 
 function gameEnds() {
-    document.getElementsByClassName("game-over-container").style.display="block"
+    document.querySelector(".game-over-container").style.display="block"
 }
 
 
@@ -88,12 +89,14 @@ choiceContainer.addEventListener("click", function(event){
 
 function verifyAnswer(event) {
     if (questions[currentQuestionIndex].answer === event.target.textContent) {
+        score++;
         currentQuestionIndex++;
         renderQuestion();
     }
     else {    
         console.log(event.target.textContent)
         deductTime();
+        currentQuestionIndex++;
         renderQuestion();
     }
 }
